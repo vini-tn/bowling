@@ -8,7 +8,7 @@ class TestBowlingGame(unittest.TestCase):
 
     def testGutterGame(self):
         for i in range(0, 20):
-            self.game.rolls(0)
+            self.game.roll(0)
         assert self.game.score()==0
     def testAllOnes(self):
         self.rollMany(1, 20)
@@ -28,7 +28,7 @@ class TestBowlingGame(unittest.TestCase):
     def testPerfectGame(self):
         self.rollMany(10,12)
         assert self.game.score()==300
-    def testOneSpareRM(self):
+    def testOneSpare(self):
         self.rollMany(5,21)
         assert self.game.score()==150
     def rollMany(self, pins,rolls):
