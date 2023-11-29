@@ -18,7 +18,7 @@ class BowlingGame:
             else:
                 result += self.frameScore(rollIndex)
             rollIndex +=2
-            return result
+        return result
 
     def isStrike(self, rollIndex):
         return self.rolls[rollIndex] == 10
