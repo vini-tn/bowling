@@ -18,11 +18,11 @@ class TestBowlingGame(unittest.TestCase):
         self.game.roll(5)
         self.game.roll(3)
         self.rollMany(0,17)
-        assert self.game.score()==13
+        assert self.game.score()==16
     def testOneStrike(self):
-        self.game.rolls(10)
-        self.game.rolls(4)
-        self.game.rolls(3)
+        self.game.roll(10)
+        self.game.roll(4)
+        self.game.roll(3)
         self.rollMany(0,16)
         assert  self.game.score()==24
     def testPerfectGame(self):
