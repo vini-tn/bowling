@@ -8,7 +8,7 @@ class BowlingGame:
     def score(self):
         result = 0
         rollIndex=0
-        for frameIndex in range(10):
+        for _ in range(10):
             if self.isStrike(rollIndex):
                 result += self.strikeScore(rollIndex)
                 rollIndex +=1

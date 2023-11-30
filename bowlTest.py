@@ -7,7 +7,7 @@ class TestBowlingGame(unittest.TestCase):
         self.game = bowlGame.BowlingGame()
 
     def testGutterGame(self):
-        for i in range(0, 20):
+        for _ in range(0, 20):
             self.game.roll(0)
         assert self.game.score()==0
     def testAllOnes(self):
