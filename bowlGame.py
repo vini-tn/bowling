@@ -17,7 +17,7 @@ class BowlingGame:
                 rollIndex +=2
             else:
                 result += self.frameScore(rollIndex)
-            rollIndex +=2
+                rollIndex +=2
         return result
 
     def isStrike(self, rollIndex):
