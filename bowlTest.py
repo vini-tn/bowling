@@ -32,6 +32,6 @@ class TestBowlingGame(unittest.TestCase):
         self.rollMany(5,21)
         assert self.game.score()==150
     def rollMany(self, pins,rolls):
-        for i in range(rolls):
-            self.game.rolls(pins)
+        for _ in range(rolls):
+            self.game.roll(pins)
 			
