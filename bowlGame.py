@@ -16,13 +16,13 @@ class BowlingGame:
     In a forloop of 10 frames:
         if roll matches isStrike condition:
             add to score with strikeScore function
-            and go to next roll
+            and go to next roll (next frame)
         else if rolls matches isSpare condition:
             add to score with spareScore function
-            and go to second next roll
+            and go to second next roll (next frame)
         else:
             add to score with frameScore function
-            and go to second next roll
+            and go to second next roll (next frame)
     '''
     def score(self):
         #REFACTORED: 'results' -> 'totalScore'. Changed for better understanding of what the function is updating and returning
@@ -47,8 +47,8 @@ class BowlingGame:
 
     '''
     Conditions: 
-        isStrike: first roll equals 10
-        isSpare: first roll and second roll equals  10
+        isStrike: 1st roll = 10
+        isSpare: 1st roll + 2nd roll = 10
     '''
     def isStrike(self, rollIndex):
         return self.rolls[rollIndex] == 10
@@ -57,11 +57,11 @@ class BowlingGame:
     
     '''
     Functions to handle score:
-        strikeScore: add 10 + second roll and third roll
-        spareScore: add 10 + third roll
-        frameScore: add first and second roll 
+        strikeScore: add 10 + 1st roll and 2nd roll of the following frame
+        spareScore: add 10 + 1st roll of the following frame
+        frameScore: add first and second roll of current frame
     '''
-    #REFACTORED: 'stickeScore' -> 'strikeScore' For clearer understanding of the function's role
+    #REFACTORED: 'stickeScore' -> 'strikeScore' Corrected spelling of function
     def strikeScore(self,rollIndex):
         return  10+ self.rolls[rollIndex+1]+ self.rolls[rollIndex+2]
 
