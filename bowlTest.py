@@ -101,8 +101,8 @@ class TestBowlingGame(unittest.TestCase):
     Total: 15 * 10 = 150
     Case passes when score equals '150'
     '''
-    #REFACTORED: 'testOneSpare' -> 'testOneSpareRM'. Changed because of conflict with earlier 'OneSpare'. RM for only usage of 'rollMany'.
-    def testOneSpareRM(self):
+    #REFACTORED: 'testOneSpare' -> 'testOneSpareRM'. Changed because of conflict with earlier 'OneSpare' and for many spares in scoring
+    def testManySpares(self):
         self.rollMany(5,21)
         assert self.game.score()==150
 
