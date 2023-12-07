@@ -24,10 +24,8 @@ class TestBowlingGame(unittest.TestCase):
     Case passes when score equals '0'
     '''
     def testGutterGame(self):
-        #REFACTORED: 'i' -> '_'. This changed because 'i' was not used but forloop was needed, hence '_' as a disgarded variable was used.
-        for _ in range(0, 20):
-            #FIXED: '.rolls' -> '.roll' according to function name in 'bowlGame.py'
-            self.game.roll(0)
+        #REFACTORED: usage of 'rollMany' as original code contained the same functionality of 'rollMany()'
+        self.rollMany(0,20)
         assert self.game.score()==0
 
     '''
@@ -55,9 +53,9 @@ class TestBowlingGame(unittest.TestCase):
     Case passes when score equals '16'
     '''
     def testOneSpare(self):
-        #FIXED: '.rolls' -> '.roll' according to function name in 'bowlGame.py' (for all 3 'self.game')
-        self.game.roll(5)
-        self.game.roll(5)
+        #FIXED: '.rolls' -> '.roll' according to function name in 'bowlGame.py'
+        #REFACTORED: Replaced two 'self.game.roll(5)' with 'rollMany(5, 2)' to reduce duplicate lines
+        self.rollMany(5,2)
         self.game.roll(3)
         self.rollMany(0,17)
         assert self.game.score()==16
